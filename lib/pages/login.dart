@@ -19,108 +19,74 @@ class LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(10),
-        child: ListView(
-          children: [
-            Container(
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  'Acertei',
-                  style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w500,
-                      fontSize: 30),
-                )),
-            Container(
-              padding: EdgeInsets.all(10),
-              child: TextField(
-                controller: usuarioController,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Nome de Usuário',
-                ),
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.all(10),
-              child: TextField(
-                obscureText: true,
-                controller: senhaController,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Senha',
-                ),
-              ),
-            ),
-            Container(
-                child: Row(
+        body: Container(
+            padding: EdgeInsets.fromLTRB(15, 15, 15, 60),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.all(10),
+                    child: Text(
+                      'Acertei!',
+                      style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 30),
+                    )),
+                Container(
                   padding: EdgeInsets.all(10),
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text('Cadastro',
-                          style: TextStyle(color: Colors.white, fontSize: 30))),
+                  child: TextField(
+                    controller: usuarioController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Nome de Usuário',
+                    ),
+                  ),
                 ),
-                ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Entrar',
-                        style: TextStyle(color: Colors.white, fontSize: 30)))
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                    obscureText: true,
+                    controller: senhaController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Senha',
+                    ),
+                  ),
+                ),
+                Container(
+                    padding: EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: Container(
+                                padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                child: ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text('Cadastro',
+                                        style: TextStyle(color: Colors.white)),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Color.fromARGB(
+                                            255, 0, 84, 182), // background
+                                        onPrimary: Colors.white // foreground
+                                        )))),
+                        Expanded(
+                            child: Container(
+                                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                child: ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text('Entrar',
+                                        style: TextStyle(color: Colors.white)),
+                                    style: ElevatedButton.styleFrom(
+                                        primary: Color.fromARGB(
+                                            255, 0, 182, 0), // background
+                                        onPrimary: Colors.white // foreground
+                                        ))))
+                      ],
+                      mainAxisAlignment: MainAxisAlignment.center,
+                    ))
               ],
-              mainAxisAlignment: MainAxisAlignment.center,
-            ))
-          ],
-        ),
-      ),
-      //   body: Center(
-      //       child: Column(children: [
-      // TextFormField(
-      //   keyboardType: TextInputType.text,
-      //   decoration: InputDecoration(
-      //       labelText: "Nome de Usuário",
-      //       labelStyle: TextStyle(color: placeholderColor)),
-      //   textAlign: TextAlign.start,
-      //   style: TextStyle(color: textColor, fontSize: 30),
-      //   controller: usuario,
-      //   validator: (value) {
-      //     if (value == null || value.isEmpty)
-      //       return "O nome de usuário não pode ser vazio.";
-      //   },
-      // ),
-      // ]))
-    );
-    // return Center(
-    //     child: Column(
-    //   children: [
-    //     TextFormField(
-    //       keyboardType: TextInputType.text,
-    //       decoration: InputDecoration(
-    //           labelText: "Nome de Usuário",
-    //           labelStyle: TextStyle(color: placeholderColor)),
-    //       textAlign: TextAlign.start,
-    //       style: TextStyle(color: textColor, fontSize: 30),
-    //       controller: usuario,
-    //       validator: (value) {
-    //         if (value == null || value.isEmpty)
-    //           return "O nome de usuário não pode ser vazio.";
-    //       },
-    //     ),
-    //     TextFormField(
-    //       keyboardType: TextInputType.visiblePassword,
-    //       decoration: InputDecoration(
-    //           labelText: "Senha",
-    //           labelStyle: TextStyle(color: placeholderColor)),
-    //       textAlign: TextAlign.start,
-    //       style: TextStyle(color: textColor, fontSize: 30),
-    //       controller: senha,
-    //       validator: (value) {
-    //         if (value == null || value.isEmpty)
-    //           return "A senha não pode ser vazia.";
-    //       },
-    //     )
-    //   ],
-    // ));
+            )));
   }
 }
