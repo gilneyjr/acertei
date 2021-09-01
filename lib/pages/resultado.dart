@@ -1,9 +1,31 @@
 import 'package:flutter/material.dart';
 
-class Resultado extends StatelessWidget {
+import 'inicial.dart';
+
+class Resultado extends StatefulWidget {
   final imagesList = [
     'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg',
   ];
+
+  final int acertou;
+  final int total;
+
+  Resultado(this.acertou, this.total);
+
+  @override
+  State<StatefulWidget> createState() => ResultadoState(acertou, total);
+}
+
+class ResultadoState extends State<Resultado> {
+  int acertou;
+  int total;
+
+  ResultadoState(this.acertou, this.total);
+
+  void irParaTelaInicial() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => Inicial()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +43,7 @@ class Resultado extends StatelessWidget {
               Container(
                 child: Center(
                   child: Text(
-                    "Você acertou 10 de 10 questões!",
+                    "Você acertou $acertou de $total questões!",
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w800,
@@ -58,7 +80,7 @@ class Resultado extends StatelessWidget {
                   child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: irParaTelaInicial,
                       child: Text('OK', style: TextStyle(color: Colors.white)),
                       style: ElevatedButton.styleFrom(
                           primary: Color.fromARGB(255, 0, 182, 0), // background

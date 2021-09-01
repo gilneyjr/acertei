@@ -1,13 +1,19 @@
+import 'package:acertei/model/perguntas.dart';
+import 'package:acertei/pages/perguntas.dart';
 import 'package:flutter/material.dart';
 
-class Materias extends StatelessWidget {
-  void clickPortugues() {}
+class Materias extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => MateriasState();
+}
 
-  void clickMatematica() {}
-
-  void clickHistoria() {}
-
-  void clickGeografia() {}
+class MateriasState extends State<Materias> {
+  void click(List<Pergunta> perguntas) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (BuildContext context) => Perguntas(perguntas)));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +46,9 @@ class Materias extends StatelessWidget {
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: ElevatedButton(
-                            onPressed: clickPortugues,
+                            onPressed: () {
+                              click(PerguntasProvider.getPortugues());
+                            },
                             child: Text(
                               'Português',
                               style: TextStyle(
@@ -56,7 +64,9 @@ class Materias extends StatelessWidget {
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: ElevatedButton(
-                            onPressed: clickMatematica,
+                            onPressed: () {
+                              click(PerguntasProvider.getMatematica());
+                            },
                             child: Text(
                               'Matemática',
                               style: TextStyle(
@@ -72,7 +82,9 @@ class Materias extends StatelessWidget {
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: ElevatedButton(
-                            onPressed: clickHistoria,
+                            onPressed: () {
+                              click(PerguntasProvider.getHistoria());
+                            },
                             child: Text(
                               'História',
                               style: TextStyle(
@@ -88,7 +100,9 @@ class Materias extends StatelessWidget {
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
                         child: ElevatedButton(
-                            onPressed: clickGeografia,
+                            onPressed: () {
+                              click(PerguntasProvider.getGeografia());
+                            },
                             child: Text(
                               'Geografia',
                               style: TextStyle(
