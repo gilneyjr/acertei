@@ -1,5 +1,8 @@
-import 'package:acertei/pages/login.dart';
+import 'package:acertei/pages/cartoes.dart';
 import 'package:flutter/material.dart';
+
+import 'home.dart';
+import 'materias.dart';
 // import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class Inicial extends StatefulWidget {
@@ -10,14 +13,19 @@ class Inicial extends StatefulWidget {
 class InicialState extends State<Inicial> {
   TextEditingController usuarioController = TextEditingController();
 
+  void irParaCartoes() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => Cartoes()));
+  }
+
+  void irParaMaterias() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => Materias()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text('Inicial'),
-        backgroundColor: Color(0xFF00A789),
-      ),
       body: Container(
         padding: EdgeInsets.fromLTRB(15, 15, 15, 60),
         child: Column(
@@ -33,7 +41,7 @@ class InicialState extends State<Inicial> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Login()),
+                    MaterialPageRoute(builder: (context) => Home()),
                   );
                 },
               ),
@@ -176,7 +184,7 @@ class InicialState extends State<Inicial> {
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: irParaCartoes,
                               child: Text(
                                 'Cartões',
                                 style: TextStyle(
@@ -192,7 +200,7 @@ class InicialState extends State<Inicial> {
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: irParaMaterias,
                               child: Text(
                                 'Perguntas',
                                 style: TextStyle(

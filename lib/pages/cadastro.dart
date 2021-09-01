@@ -27,7 +27,7 @@ class CadastroState extends State<Cadastro> {
         context, MaterialPageRoute(builder: (BuildContext context) => Login()));
   }
 
-  void cadastro() {
+  void cadastrar() {
     Navigator.push(context,
         MaterialPageRoute(builder: (BuildContext context) => Inicial()));
   }
@@ -112,7 +112,7 @@ class CadastroState extends State<Cadastro> {
                             child: Container(
                                 padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: cadastrar,
                                     child: Text('Cadastro',
                                         style: TextStyle(color: Colors.white)),
                                     style: ElevatedButton.styleFrom(
