@@ -34,52 +34,46 @@ class PerguntasState extends State<Perguntas> {
 
   @override
   Widget build(BuildContext context) {
-    final List<String> alternativas = <String>[
-      'Cabeça',
-      'Pulmões',
-      'Pele',
-      'Estômago'
-    ];
-    final title = 'Perguntas';
-    final ButtonStyle style =
-        ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
-    return MaterialApp(
-      title: title,
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text(title),
-            centerTitle: true,
-            backgroundColor: Color(0xFF00A789),
-          ),
-          body: Column(children: [
-            Container(
-              padding: EdgeInsets.all(10),
-              child: Text(perguntas[perguntaAtual].enunciado),
+    final ButtonStyle style = ElevatedButton.styleFrom(
+        textStyle: const TextStyle(fontSize: 20),
+        primary: Color(0xFF00A789),
+        padding: EdgeInsets.all(25));
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Pergunta ${perguntaAtual + 1}/${perguntas.length}'),
+          centerTitle: true,
+          backgroundColor: Color(0xFF00A789),
+        ),
+        body: Column(children: [
+          Container(
+              padding: EdgeInsets.all(20),
+              child: Text(
+                perguntas[perguntaAtual].enunciado,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 18),
+              )),
+          Expanded(
+            child: ListView.separated(
+              padding: const EdgeInsets.all(20),
+              itemCount: perguntas[perguntaAtual].alternativas.length,
+              itemBuilder: (BuildContext context, int index) {
+                return SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      child: Text(
+                          '${perguntas[perguntaAtual].alternativas[index]}'),
+                      onPressed: () {
+                        responder(index);
+                      },
+                      style: style),
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) =>
+                  const Divider(),
             ),
-            Expanded(
-              child: ListView.separated(
-                padding: const EdgeInsets.all(8),
-                itemCount: perguntas[perguntaAtual].alternativas.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    height: 50,
-                    color: Colors.green.withOpacity(0.5),
-                    child: Center(
-                      child: ElevatedButton(
-                        child: Text(
-                            ' ${perguntas[perguntaAtual].alternativas[index]}'),
-                        onPressed: () {
-                          responder(index);
-                        },
-                      ),
-                    ),
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) =>
-                    const Divider(),
-              ),
-            )
-          ])),
-    );
+          )
+        ]));
   }
 }

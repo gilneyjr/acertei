@@ -77,7 +77,7 @@ class PerguntasProvider {
             'Hidrelétrica Paulo Afonso',
             'Hidrelétrica do Tucuruí'
           ]),
-          1)
+          0)
     ]);
   }
 }
