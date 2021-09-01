@@ -175,7 +175,7 @@ class InicialState extends State<Inicial> {
                 children: [
                   Container(
                     alignment: Alignment.center,
-                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
                     child: Expanded(
                       child: ElevatedButton(
                         onPressed: () {},
@@ -197,7 +197,7 @@ class InicialState extends State<Inicial> {
                   ),
                   Container(
                     alignment: Alignment.center,
-                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
                     child: Expanded(
                       child: ElevatedButton(
                         onPressed: () {},
