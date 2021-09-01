@@ -1,7 +1,6 @@
-import 'package:acertei/pages/login.dart';
-import 'package:acertei/pages/inicial.dart';
+import 'package:acertei/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(title: "Acertei!", home: Inicial()));
+  runApp(MaterialApp(title: "Acertei!", home: Home()));
 }
