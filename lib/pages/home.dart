@@ -1,7 +1,25 @@
+import 'package:acertei/pages/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+import 'cadastro.dart';
+
+class Home extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() => HomeState();
+}
+
+class HomeState extends State<Home> {
+  void irParaCadastro() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => Cadastro()));
+  }
+
+  void irParaEntrar() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (BuildContext context) => Login()));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +43,7 @@ class Home extends StatelessWidget {
                     child: Container(
                         padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                         child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: irParaEntrar,
                             child: Text('Entrar',
                                 style: TextStyle(color: Colors.white)),
                             style: ElevatedButton.styleFrom(
@@ -38,7 +56,7 @@ class Home extends StatelessWidget {
                     child: Container(
                         padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
                         child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: irParaCadastro,
                             child: Text('Cadastro',
                                 style: TextStyle(color: Colors.white)),
                             style: ElevatedButton.styleFrom(

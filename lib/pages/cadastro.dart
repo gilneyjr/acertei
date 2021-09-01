@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'login.dart';
+
 class Cadastro extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => CadastroState();
@@ -17,6 +19,16 @@ class CadastroState extends State<Cadastro> {
     usuarioController.clear();
     senhaController.clear();
     senha2Controller.clear();
+  }
+
+  void irParaEntrar() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (BuildContext context) => Login()));
+  }
+
+  void cadastro() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => Inicial()));
   }
 
   @override
@@ -87,7 +99,7 @@ class CadastroState extends State<Cadastro> {
                             child: Container(
                                 padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
                                 child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: irParaEntrar,
                                     child: Text('Entrar',
                                         style: TextStyle(color: Colors.white)),
                                     style: ElevatedButton.styleFrom(

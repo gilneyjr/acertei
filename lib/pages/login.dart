@@ -1,3 +1,4 @@
+import 'package:acertei/pages/cadastro.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -6,12 +7,27 @@ class Login extends StatefulWidget {
 }
 
 class LoginState extends State<Login> {
+  final String usuarioPadrao = 'josesilva';
+  final String senhapadrao = '1234';
+
   TextEditingController usuarioController = TextEditingController();
   TextEditingController senhaController = TextEditingController();
 
   void resetarCampos() {
     usuarioController.clear();
     senhaController.clear();
+  }
+
+  void irParaCadastro() {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => Cadastro()));
+  }
+
+  void entrar() {
+    if (usuarioController.text == usuarioPadrao &&
+        senhaController.text == senhapadrao)
+      Navigator.push(context,
+          MaterialPageRoute(builder: (BuildContext context) => Inicial()));
   }
 
   @override
@@ -61,7 +77,7 @@ class LoginState extends State<Login> {
                             child: Container(
                                 padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
                                 child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: irParaCadastro,
                                     child: Text('Cadastro',
                                         style: TextStyle(color: Colors.white)),
                                     style: ElevatedButton.styleFrom(
@@ -73,7 +89,7 @@ class LoginState extends State<Login> {
                             child: Container(
                                 padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 child: ElevatedButton(
-                                    onPressed: () {},
+                                    onPressed: entrar,
                                     child: Text('Entrar',
                                         style: TextStyle(color: Colors.white)),
                                     style: ElevatedButton.styleFrom(
