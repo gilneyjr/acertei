@@ -1,5 +1,6 @@
 import 'package:acertei/pages/login.dart';
 import 'package:flutter/material.dart';
+// import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class Inicial extends StatefulWidget {
   @override
@@ -7,8 +8,6 @@ class Inicial extends StatefulWidget {
 }
 
 class InicialState extends State<Inicial> {
-  Color placeholderColor = Color(0xA0A0A0FF);
-  Color textColor = Color(0x252525FF);
   TextEditingController usuarioController = TextEditingController();
 
   @override
@@ -65,21 +64,160 @@ class InicialState extends State<Inicial> {
               ),
             ),
             Container(
+              margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
               decoration: const BoxDecoration(
                 border: Border(
                   top: BorderSide(width: 1.0, color: Color(0xFFB8B8B8)),
                   bottom: BorderSide(width: 1.0, color: Color(0xFFB8B8B8)),
                 ),
               ),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 8,
+                        child: Text(
+                          'Qnt. Respostas Certas',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w900,
+                              fontSize: 18,
+                              height: 2,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Text(
+                          '10',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 18,
+                              height: 2,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 8,
+                        child: Text(
+                          'Qnt. Respostas Erradas',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w900,
+                              fontSize: 18,
+                              height: 2,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Text(
+                          '2',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 18,
+                              height: 2,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        flex: 8,
+                        child: Text(
+                          'Qnt. Cartões Adquiridos',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w900,
+                              fontSize: 18,
+                              height: 2,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 2,
+                        child: Text(
+                          '20',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 18,
+                              height: 2,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Container(
               alignment: Alignment.center,
-              padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-              child: Text(
-                'Qnt. Respostas Certas',
-                style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.w900,
-                    fontSize: 15
-                ),
+              margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
+              padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+              child: Row(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Cartões',
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 24
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            primary: Color(0xFF00A789), // background
+                            onPrimary: Colors.white // foreground
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    child: Expanded(
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Perguntas',
+                          textAlign: TextAlign.right,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 24
+                          ),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                            primary: Color(0xFF00A789), // background
+                            onPrimary: Colors.white // foreground
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
