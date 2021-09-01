@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'inicial.dart';
 import 'login.dart';
 
 class Cadastro extends StatefulWidget {

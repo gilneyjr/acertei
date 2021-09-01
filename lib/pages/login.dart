@@ -1,6 +1,8 @@
 import 'package:acertei/pages/cadastro.dart';
 import 'package:flutter/material.dart';
 
+import 'inicial.dart';
+
 class Login extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => LoginState();

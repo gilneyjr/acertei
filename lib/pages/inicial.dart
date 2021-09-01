@@ -21,7 +21,6 @@ class InicialState extends State<Inicial> {
       body: Container(
         padding: EdgeInsets.fromLTRB(15, 15, 15, 60),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               alignment: Alignment.topRight,
@@ -55,16 +54,14 @@ class InicialState extends State<Inicial> {
               alignment: Alignment.center,
               padding: EdgeInsets.all(0),
               child: Text(
-                  'José da Silva',
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.w900,
-                      fontSize: 30
-                  ),
+                'José da Silva',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w900,
+                    fontSize: 30),
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
               padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
               decoration: const BoxDecoration(
                 border: Border(
@@ -82,10 +79,10 @@ class InicialState extends State<Inicial> {
                           'Qnt. Respostas Certas',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 18,
-                              height: 2,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 18,
+                            height: 2,
                           ),
                         ),
                       ),
@@ -95,10 +92,10 @@ class InicialState extends State<Inicial> {
                           '10',
                           textAlign: TextAlign.right,
                           style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 18,
-                              height: 2,
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 18,
+                            height: 2,
                           ),
                         ),
                       ),
@@ -112,10 +109,10 @@ class InicialState extends State<Inicial> {
                           'Qnt. Respostas Erradas',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 18,
-                              height: 2,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 18,
+                            height: 2,
                           ),
                         ),
                       ),
@@ -125,10 +122,10 @@ class InicialState extends State<Inicial> {
                           '2',
                           textAlign: TextAlign.right,
                           style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 18,
-                              height: 2,
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 18,
+                            height: 2,
                           ),
                         ),
                       ),
@@ -142,10 +139,10 @@ class InicialState extends State<Inicial> {
                           'Qnt. Cartões Adquiridos',
                           textAlign: TextAlign.left,
                           style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 18,
-                              height: 2,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 18,
+                            height: 2,
                           ),
                         ),
                       ),
@@ -155,10 +152,10 @@ class InicialState extends State<Inicial> {
                           '20',
                           textAlign: TextAlign.right,
                           style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 18,
-                              height: 2,
+                            color: Colors.black,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 18,
+                            height: 2,
                           ),
                         ),
                       ),
@@ -167,59 +164,47 @@ class InicialState extends State<Inicial> {
                 ],
               ),
             ),
-            Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
-              padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-              child: Row(
-                children: [
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                    child: Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Cartões',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w800,
-                              fontSize: 24
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                            primary: Color(0xFF00A789), // background
-                            onPrimary: Colors.white // foreground
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.fromLTRB(40, 0, 0, 0),
-                    child: Expanded(
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
-                          'Perguntas',
-                          textAlign: TextAlign.right,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w800,
-                              fontSize: 24
-                          ),
-                        ),
-                        style: ElevatedButton.styleFrom(
-                            primary: Color(0xFF00A789), // background
-                            onPrimary: Colors.white // foreground
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            Expanded(
+                child: GridView.count(
+                    primary: false,
+                    padding: const EdgeInsets.all(30),
+                    crossAxisSpacing: 30,
+                    mainAxisSpacing: 16,
+                    crossAxisCount: 2,
+                    children: [
+                  SizedBox.expand(
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: ElevatedButton(
+                              onPressed: () {},
+                              child: Text(
+                                'Cartões',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 24),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Color(0xFF00A789), // background
+                                  onPrimary: Colors.white // foreground
+                                  )))),
+                  SizedBox.expand(
+                      child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: ElevatedButton(
+                              onPressed: () {},
+                              child: Text(
+                                'Perguntas',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 24),
+                              ),
+                              style: ElevatedButton.styleFrom(
+                                  primary: Color(0xFF00A789), // background
+                                  onPrimary: Colors.white // foreground
+                                  ))))
+                ]))
           ],
         ),
       ),
