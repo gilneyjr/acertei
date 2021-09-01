@@ -22,6 +22,8 @@ class Cartoes extends StatelessWidget {
     'https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/0f/d1/3d/0fd13d2f-a09f-0453-01bc-cfe996eb628c/source/512x512bb.jpg', //horse
   ];
 
+  void clickCartao(int index) {}
+
   @override
   Widget build(BuildContext context) {
     final title = 'Cartões';
@@ -41,11 +43,13 @@ class Cartoes extends StatelessWidget {
           imagesList.length,
           (index) {
             return ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: Image(
-                image: NetworkImage(imagesList[index]),
-              ),
-            );
+                borderRadius: BorderRadius.circular(20),
+                child: ElevatedButton(
+                  onPressed: () => {clickCartao(index)},
+                  child: Image(
+                    image: NetworkImage(imagesList[index]),
+                  ),
+                ));
           },
         ),
       ),
