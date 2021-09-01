@@ -1,17 +1,22 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
+class Cadastro extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => LoginState();
+  State<StatefulWidget> createState() => CadastroState();
 }
 
-class LoginState extends State<Login> {
+class CadastroState extends State<Cadastro> {
+  TextEditingController emailController = TextEditingController();
   TextEditingController usuarioController = TextEditingController();
   TextEditingController senhaController = TextEditingController();
+  TextEditingController senha2Controller = TextEditingController();
 
   void resetarCampos() {
+    emailController.clear();
     usuarioController.clear();
     senhaController.clear();
+    senha2Controller.clear();
   }
 
   @override
@@ -35,6 +40,16 @@ class LoginState extends State<Login> {
                 Container(
                   padding: EdgeInsets.all(10),
                   child: TextField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'E-mail',
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
                     controller: usuarioController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
@@ -54,6 +69,17 @@ class LoginState extends State<Login> {
                   ),
                 ),
                 Container(
+                  padding: EdgeInsets.all(10),
+                  child: TextField(
+                    obscureText: true,
+                    controller: senha2Controller,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Confirmação de Senha',
+                    ),
+                  ),
+                ),
+                Container(
                     padding: EdgeInsets.all(10),
                     child: Row(
                       children: [
@@ -62,7 +88,7 @@ class LoginState extends State<Login> {
                                 padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
                                 child: ElevatedButton(
                                     onPressed: () {},
-                                    child: Text('Cadastro',
+                                    child: Text('Entrar',
                                         style: TextStyle(color: Colors.white)),
                                     style: ElevatedButton.styleFrom(
                                         primary: Color.fromARGB(
@@ -74,7 +100,7 @@ class LoginState extends State<Login> {
                                 padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                                 child: ElevatedButton(
                                     onPressed: () {},
-                                    child: Text('Entrar',
+                                    child: Text('Cadastro',
                                         style: TextStyle(color: Colors.white)),
                                     style: ElevatedButton.styleFrom(
                                         primary: Color.fromARGB(
