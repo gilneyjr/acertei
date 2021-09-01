@@ -3,9 +3,13 @@ import 'package:flutter/material.dart';
 class Perguntas extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final List<String> alternativas = <String>['Cabeça', 'Pulmões', 'Pele', 'Estômago'];
-    final title = 'Perguntas';
-    final ButtonStyle style = ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
+
+    void _onPressed(String value) {
+
+    }
+    final List<String> alternativas = <String>['Cabeça', 'Pulmão', 'Pele', 'Estômago'];
+    final title = 'Perguntas (1/10)';
+    final ButtonStyle style = ElevatedButton.styleFrom(primary: Color(0xFF00A789), onSurface: Colors.green, textStyle: const TextStyle(fontSize: 25));
     return MaterialApp(
       title: title,
       home: Scaffold(
@@ -20,7 +24,7 @@ class Perguntas extends StatelessWidget {
             [
               Container(
                 padding: EdgeInsets.all(10),
-                child: Text(" Qual é o maior órgão do corpo humano? "),
+                child: Text(" Qual é o maior órgão do corpo humano? ",style: const TextStyle(fontSize: 25),),
               ),
               Expanded(
                 child: ListView.separated(
@@ -29,8 +33,8 @@ class Perguntas extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                 return Container(
                   height: 50,
-                  color: Colors.green.withOpacity(0.5),
-                  child: Center(child: ElevatedButton( child: Text(' ${alternativas[index]}'), onPressed: () {/** */},),),
+                  color: Color(0xFF00A789),
+                  child: Center(child: ElevatedButton( child: Text(' ${alternativas[index]}'), style: style, onPressed: () => _onPressed(' ${alternativas[index]}'),),),
 
                 );
                 },
